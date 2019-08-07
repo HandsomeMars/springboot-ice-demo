@@ -12,6 +12,13 @@
 
     <artifactId>springboot-ice-slice-plugin</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.zeroc</groupId>
+            <artifactId>ice</artifactId>
+            <version>3.6.2</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
