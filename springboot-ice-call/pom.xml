@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zyj</groupId>
+    <artifactId>springboot-ice-call</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>springboot-ice-call</name>
+    <description>Demo project for Spring Boot</description>
+
+    <parent>
+        <groupId>com.zyj</groupId>
+        <artifactId>springboot-ice-demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
+
+        <!--ice配置开始-->
+        <dependency>
+            <groupId>com.zeroc</groupId>
+            <artifactId>ice</artifactId>
+            <version>3.6.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>default-cli</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <target name="slice2java">
+                                <taskdef name="slice2java" classname="Slice2JavaTask"
+                                         classpathref="maven.plugin.classpath"/>
+                                <!--slice2java路径-->
+                                <slice2java outputdir="src/main/java/">
+                                    <!--slice文件列表 输入路径-->
+                                    <fileset dir="src/main/resources/slice" includes="**/*.ice"/>
+                                    <!--<includepath>-->
+                                    <!--<pathelement path="src/main/java/com/zyj/ice/slice"/>-->
+                                    <!--</includepath>-->
+                                </slice2java>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+
+                </executions>
+                <dependencies>
+                    <!-- https://mvnrepository.com/artifact/com.zeroc/ant-ice -->
+                    <dependency>
+                        <groupId>com.zeroc</groupId>
+                        <artifactId>ant-ice</artifactId>
+                        <version>4.1.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

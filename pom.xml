@@ -17,8 +17,7 @@
 		<spring-boot-dependencies.version>2.0.3.RELEASE</spring-boot-dependencies.version>
 	</properties>
 <modules>
-	<module>springboot-ice-call-client</module>
-	<module>springboot-ice-call-server</module>
+	<module>springboot-ice-call</module>
 	<module>springboot-ice-hello</module>
 	<module>springboot-ice-slice-plugin</module>
     <module>springboot-ice-slice-bat</module>
