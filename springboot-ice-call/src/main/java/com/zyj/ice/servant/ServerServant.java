@@ -6,33 +6,12 @@ import slice2java.IServerCallBackPrx;
 import slice2java.IServerCallBackPrxHelper;
 import slice2java._IServerDisp;
 
+
 /**
- * 　　┏┓　　　┏┓+ +
- * 　┏┛┻━━━┛┻┓ + +
- * 　┃　　　　　　　┃
- * 　┃　　　━　　　┃ ++ + + +
- * ████━████ ┃+
- * 　┃　　　　　　　┃ +
- * 　┃　　　┻　　　┃
- * 　┃　　　　　　　┃ + +
- * 　┗━┓　　　┏━┛
- * 　　　┃　　　┃
- * 　　　┃　　　┃ + + + +
- * 　　　┃　　　┃
- * 　　　┃　　　┃ +  神兽保佑
- * 　　　┃　　　┃    代码无bug
- * 　　　┃　　　┃　　+
- * 　　　┃　 　　┗━━━┓ + +
- * 　　　┃ 　　　　　　　┣┓
- * 　　　┃ 　　　　　　　┏┛
- * 　　　┗┓┓┏━┳┓┏┛ + + + +
- * 　　　　┃┫┫　┃┫┫
- * 　　　　┗┻┛　┗┻┛+ + + +
- *
  * @author by zyj
  * @version V1.0
  * @Description:
- * @Date 2018/11/15 16:49
+ * @Date 2019/8/6 21:13
  */
 @Service
 public class ServerServant extends _IServerDisp {

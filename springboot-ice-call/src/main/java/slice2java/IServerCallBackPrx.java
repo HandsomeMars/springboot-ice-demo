@@ -31,7 +31,6 @@ public interface IServerCallBackPrx extends Ice.ObjectPrx {
 
     /**
      * 客户端处理服务端返回
-     *
      * @param __ctx The Context map to send with the invocation.
      **/
     public boolean response(String msg, java.util.Map<String, String> __ctx);
@@ -81,48 +80,44 @@ public interface IServerCallBackPrx extends Ice.ObjectPrx {
 
     /**
      * 客户端处理服务端返回
-     *
-     * @param __responseCb  The lambda response callback.
+     * @param __responseCb The lambda response callback.
      * @param __exceptionCb The lambda exception callback.
-     * @return The asynchronous result object.
-     **/
-    public Ice.AsyncResult begin_response(String msg,
-                                          IceInternal.Functional_BoolCallback __responseCb, 
-                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
-
-    /**
-     * 客户端处理服务端返回
-     *
-     * @param __responseCb  The lambda response callback.
-     * @param __exceptionCb The lambda exception callback.
-     * @param __sentCb      The lambda sent callback.
      * @return The asynchronous result object.
      **/
     public Ice.AsyncResult begin_response(String msg,
                                           IceInternal.Functional_BoolCallback __responseCb,
-                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+
+    /**
+     * 客户端处理服务端返回
+     * @param __responseCb The lambda response callback.
+     * @param __exceptionCb The lambda exception callback.
+     * @param __sentCb The lambda sent callback.
+     * @return The asynchronous result object.
+     **/
+    public Ice.AsyncResult begin_response(String msg,
+                                          IceInternal.Functional_BoolCallback __responseCb,
+                                          IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb,
                                           IceInternal.Functional_BoolCallback __sentCb);
 
     /**
      * 客户端处理服务端返回
-     *
-     * @param __ctx         The Context map to send with the invocation.
-     * @param __responseCb  The lambda response callback.
+     * @param __ctx The Context map to send with the invocation.
+     * @param __responseCb The lambda response callback.
      * @param __exceptionCb The lambda exception callback.
      * @return The asynchronous result object.
      **/
     public Ice.AsyncResult begin_response(String msg,
                                           java.util.Map<String, String> __ctx,
-                                          IceInternal.Functional_BoolCallback __responseCb, 
+                                          IceInternal.Functional_BoolCallback __responseCb,
                                           IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
     /**
      * 客户端处理服务端返回
-     *
-     * @param __ctx         The Context map to send with the invocation.
-     * @param __responseCb  The lambda response callback.
+     * @param __ctx The Context map to send with the invocation.
+     * @param __responseCb The lambda response callback.
      * @param __exceptionCb The lambda exception callback.
-     * @param __sentCb      The lambda sent callback.
+     * @param __sentCb The lambda sent callback.
      * @return The asynchronous result object.
      **/
     public Ice.AsyncResult begin_response(String msg,

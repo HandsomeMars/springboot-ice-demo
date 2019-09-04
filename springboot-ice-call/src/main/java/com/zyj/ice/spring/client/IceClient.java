@@ -2,6 +2,7 @@ package com.zyj.ice.spring.client;
 
 import Ice.Identity;
 import com.zyj.ice.servant.ClientServant;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import slice2java.IServerPrx;
 import slice2java.IServerPrxHelper;
@@ -29,6 +30,8 @@ public class IceClient implements Runnable {
      */
     private static final String SERVER_ENDPOINT = "tcp -h 127.0.0.1 -p 10006";
 
+    @Autowired
+    private ClientServant clientServant;
 
     @PostConstruct
     private void startIceClient() {
@@ -69,7 +72,6 @@ public class IceClient implements Runnable {
             Ice.Identity id = new Identity();
             id.name = "client";
             id.category = "";
-            ClientServant clientServant = new ClientServant();
             adapter.add(clientServant, id);
             adapter.activate();
 

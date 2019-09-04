@@ -117,11 +117,11 @@ public abstract class _IServerDisp extends Ice.ObjectImpl implements IServer
 
     public Ice.DispatchStatus __dispatch(IceInternal.Incoming in, Ice.Current __current) {
         int pos = java.util.Arrays.binarySearch(__all, __current.operation);
-        if(pos < 0) {
+        if (pos < 0) {
             throw new Ice.OperationNotExistException(__current.id, __current.facet, __current.operation);
         }
 
-        switch(pos) {
+        switch (pos) {
             case 0: {
                 return ___ice_id(this, in, __current);
             }

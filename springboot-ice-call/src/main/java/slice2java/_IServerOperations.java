@@ -27,7 +27,6 @@ public interface _IServerOperations
 {
     /**
      * 服务端设置客户端回调对象
-     *
      * @param __current The Current object for the invocation.
      **/
     boolean setCallBack(Ice.Identity id, Ice.Current __current);
