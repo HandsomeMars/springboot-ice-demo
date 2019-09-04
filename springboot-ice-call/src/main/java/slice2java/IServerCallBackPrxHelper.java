@@ -165,7 +165,6 @@ public final class IServerCallBackPrxHelper extends Ice.ObjectPrxHelperBase impl
     /**
      * Contacts the remote server to verify that the object implements this type.
      * Raises a local exception if a communication error occurs.
-     *
      * @param __obj The untyped proxy.
      * @return A proxy for this type, or null if the object does not support this type.
      **/
@@ -176,7 +175,6 @@ public final class IServerCallBackPrxHelper extends Ice.ObjectPrxHelperBase impl
     /**
      * Contacts the remote server to verify that the object implements this type.
      * Raises a local exception if a communication error occurs.
-     *
      * @param __obj The untyped proxy.
      * @param __ctx The Context map to send with the invocation.
      * @return A proxy for this type, or null if the object does not support this type.
@@ -188,8 +186,7 @@ public final class IServerCallBackPrxHelper extends Ice.ObjectPrxHelperBase impl
     /**
      * Contacts the remote server to verify that a facet of the object implements this type.
      * Raises a local exception if a communication error occurs.
-     *
-     * @param __obj   The untyped proxy.
+     * @param __obj The untyped proxy.
      * @param __facet The name of the desired facet.
      * @return A proxy for this type, or null if the object does not support this type.
      **/
@@ -200,10 +197,9 @@ public final class IServerCallBackPrxHelper extends Ice.ObjectPrxHelperBase impl
     /**
      * Contacts the remote server to verify that a facet of the object implements this type.
      * Raises a local exception if a communication error occurs.
-     *
-     * @param __obj   The untyped proxy.
+     * @param __obj The untyped proxy.
      * @param __facet The name of the desired facet.
-     * @param __ctx   The Context map to send with the invocation.
+     * @param __ctx The Context map to send with the invocation.
      * @return A proxy for this type, or null if the object does not support this type.
      **/
     public static IServerCallBackPrx checkedCast(Ice.ObjectPrx __obj, String __facet, java.util.Map<String, String> __ctx) {
@@ -212,7 +208,6 @@ public final class IServerCallBackPrxHelper extends Ice.ObjectPrxHelperBase impl
 
     /**
      * Downcasts the given proxy to this type without contacting the remote server.
-     *
      * @param __obj The untyped proxy.
      * @return A proxy for this type.
      **/
@@ -222,8 +217,7 @@ public final class IServerCallBackPrxHelper extends Ice.ObjectPrxHelperBase impl
 
     /**
      * Downcasts the given proxy to this type without contacting the remote server.
-     *
-     * @param __obj   The untyped proxy.
+     * @param __obj The untyped proxy.
      * @param __facet The name of the desired facet.
      * @return A proxy for this type.
      **/
@@ -239,7 +233,6 @@ public final class IServerCallBackPrxHelper extends Ice.ObjectPrxHelperBase impl
 
     /**
      * Provides the Slice type ID of this type.
-     *
      * @return The Slice type ID.
      **/
     public static String ice_staticId() {

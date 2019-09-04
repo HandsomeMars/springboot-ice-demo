@@ -20,6 +20,9 @@
 
 package slice2java;
 
+/**
+ * ice客户端
+ **/
 public interface IServerCallBack extends Ice.Object,
         _IServerCallBackOperations, _IServerCallBackOperationsNC {
     public static final String ice_staticId = "::slice2java::IServerCallBack";

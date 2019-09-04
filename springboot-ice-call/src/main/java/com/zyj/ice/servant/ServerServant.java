@@ -38,6 +38,12 @@ import slice2java._IServerDisp;
 public class ServerServant extends _IServerDisp {
 
 
+    /**
+     * 服务端设置客户端回调对象
+     *
+     * @param id
+     * @param __current The Current object for the invocation.
+     **/
     @Override
     public boolean setCallBack(Identity id, Current __current) {
         IServerCallBackPrx iServerCallBackPrx = IServerCallBackPrxHelper.uncheckedCast(__current.con.createProxy(id));
@@ -63,6 +69,12 @@ public class ServerServant extends _IServerDisp {
         return true;
     }
 
+    /**
+     * 服务端处理客户端请求
+     *
+     * @param msg
+     * @param __current The Current object for the invocation.
+     **/
     @Override
     public boolean request(String msg, Current __current) {
         System.out.println("client:" + msg);

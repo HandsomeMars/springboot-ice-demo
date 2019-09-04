@@ -20,11 +20,14 @@
 
 package slice2java;
 
+/**
+ * 服务端处理客户端请求
+ **/
+
 public abstract class Callback_IServer_request
-    extends IceInternal.TwowayCallback implements Ice.TwowayCallbackBool
+        extends IceInternal.TwowayCallback implements Ice.TwowayCallbackBool
 {
-    public final void __completed(Ice.AsyncResult __result)
-    {
+    public final void __completed(Ice.AsyncResult __result) {
         IServerPrxHelper.__request_completed(this, __result);
     }
 }

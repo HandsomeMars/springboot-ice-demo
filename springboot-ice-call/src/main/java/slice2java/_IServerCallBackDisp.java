@@ -20,63 +20,59 @@
 
 package slice2java;
 
+/**
+ * ice客户端
+ **/
 public abstract class _IServerCallBackDisp extends Ice.ObjectImpl implements IServerCallBack
 {
     protected void
     ice_copyStateFrom(Ice.Object __obj)
-        throws java.lang.CloneNotSupportedException
-    {
+            throws java.lang.CloneNotSupportedException {
         throw new java.lang.CloneNotSupportedException();
     }
 
     public static final String[] __ids =
-    {
-        "::Ice::Object",
-            "::slice2java::IServerCallBack"
-    };
+            {
+                    "::Ice::Object",
+                    "::slice2java::IServerCallBack"
+            };
 
-    public boolean ice_isA(String s)
-    {
+    public boolean ice_isA(String s) {
         return java.util.Arrays.binarySearch(__ids, s) >= 0;
     }
 
-    public boolean ice_isA(String s, Ice.Current __current)
-    {
+    public boolean ice_isA(String s, Ice.Current __current) {
         return java.util.Arrays.binarySearch(__ids, s) >= 0;
     }
 
-    public String[] ice_ids()
-    {
+    public String[] ice_ids() {
         return __ids;
     }
 
-    public String[] ice_ids(Ice.Current __current)
-    {
+    public String[] ice_ids(Ice.Current __current) {
         return __ids;
     }
 
-    public String ice_id()
-    {
+    public String ice_id() {
         return __ids[1];
     }
 
-    public String ice_id(Ice.Current __current)
-    {
+    public String ice_id(Ice.Current __current) {
         return __ids[1];
     }
 
-    public static String ice_staticId()
-    {
+    public static String ice_staticId() {
         return __ids[1];
     }
 
-    public final boolean response(String msg)
-    {
+    /**
+     * 客户端处理服务端返回
+     **/
+    public final boolean response(String msg) {
         return response(msg, null);
     }
 
-    public static Ice.DispatchStatus ___response(IServerCallBack __obj, IceInternal.Incoming __inS, Ice.Current __current)
-    {
+    public static Ice.DispatchStatus ___response(IServerCallBack __obj, IceInternal.Incoming __inS, Ice.Current __current) {
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
         String msg;
@@ -90,42 +86,34 @@ public abstract class _IServerCallBackDisp extends Ice.ObjectImpl implements ISe
     }
 
     private final static String[] __all =
-    {
-        "ice_id",
-        "ice_ids",
-        "ice_isA",
-        "ice_ping",
-            "response"
-    };
+            {
+                    "ice_id",
+                    "ice_ids",
+                    "ice_isA",
+                    "ice_ping",
+                    "response"
+            };
 
-    public Ice.DispatchStatus __dispatch(IceInternal.Incoming in, Ice.Current __current)
-    {
+    public Ice.DispatchStatus __dispatch(IceInternal.Incoming in, Ice.Current __current) {
         int pos = java.util.Arrays.binarySearch(__all, __current.operation);
-        if(pos < 0)
-        {
+        if(pos < 0) {
             throw new Ice.OperationNotExistException(__current.id, __current.facet, __current.operation);
         }
 
-        switch(pos)
-        {
-            case 0:
-            {
+        switch(pos) {
+            case 0: {
                 return ___ice_id(this, in, __current);
             }
-            case 1:
-            {
+            case 1: {
                 return ___ice_ids(this, in, __current);
             }
-            case 2:
-            {
+            case 2: {
                 return ___ice_isA(this, in, __current);
             }
-            case 3:
-            {
+            case 3: {
                 return ___ice_ping(this, in, __current);
             }
-            case 4:
-            {
+            case 4: {
                 return ___response(this, in, __current);
             }
         }
@@ -134,14 +122,12 @@ public abstract class _IServerCallBackDisp extends Ice.ObjectImpl implements ISe
         throw new Ice.OperationNotExistException(__current.id, __current.facet, __current.operation);
     }
 
-    protected void __writeImpl(IceInternal.BasicStream __os)
-    {
+    protected void __writeImpl(IceInternal.BasicStream __os) {
         __os.startWriteSlice(ice_staticId(), -1, true);
         __os.endWriteSlice();
     }
 
-    protected void __readImpl(IceInternal.BasicStream __is)
-    {
+    protected void __readImpl(IceInternal.BasicStream __is) {
         __is.startReadSlice();
         __is.endReadSlice();
     }

@@ -20,7 +20,13 @@
 
 package slice2java;
 
+/**
+ * ice客户端
+ **/
 public interface _IServerCallBackOperationsNC
 {
+    /**
+     * 客户端处理服务端返回
+     **/
     boolean response(String msg);
 }

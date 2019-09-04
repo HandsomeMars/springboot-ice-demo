@@ -20,68 +20,66 @@
 
 package slice2java;
 
+/**
+ * ice服务端
+ **/
 public abstract class _IServerDisp extends Ice.ObjectImpl implements IServer
 {
     protected void
     ice_copyStateFrom(Ice.Object __obj)
-        throws java.lang.CloneNotSupportedException
-    {
+            throws java.lang.CloneNotSupportedException {
         throw new java.lang.CloneNotSupportedException();
     }
 
     public static final String[] __ids =
-    {
-        "::Ice::Object",
-            "::slice2java::IServer"
-    };
+            {
+                    "::Ice::Object",
+                    "::slice2java::IServer"
+            };
 
-    public boolean ice_isA(String s)
-    {
+    public boolean ice_isA(String s) {
         return java.util.Arrays.binarySearch(__ids, s) >= 0;
     }
 
-    public boolean ice_isA(String s, Ice.Current __current)
-    {
+    public boolean ice_isA(String s, Ice.Current __current) {
         return java.util.Arrays.binarySearch(__ids, s) >= 0;
     }
 
-    public String[] ice_ids()
-    {
+    public String[] ice_ids() {
         return __ids;
     }
 
-    public String[] ice_ids(Ice.Current __current)
-    {
+    public String[] ice_ids(Ice.Current __current) {
         return __ids;
     }
 
-    public String ice_id()
-    {
+    public String ice_id() {
         return __ids[1];
     }
 
-    public String ice_id(Ice.Current __current)
-    {
+    public String ice_id(Ice.Current __current) {
         return __ids[1];
     }
 
-    public static String ice_staticId()
-    {
+    public static String ice_staticId() {
         return __ids[1];
     }
 
-    public final boolean request(String msg)
-    {
+    /**
+     * 服务端处理客户端请求
+     **/
+    public final boolean request(String msg) {
         return request(msg, null);
     }
 
-    public final boolean setCallBack(Ice.Identity id)
-    {
+    /**
+     * 服务端设置客户端回调对象
+     **/
+    public final boolean setCallBack(Ice.Identity id) {
         return setCallBack(id, null);
     }
 
-    public static Ice.DispatchStatus ___setCallBack(IServer __obj, IceInternal.Incoming __inS, Ice.Current __current)
-    {
+    public static Ice.DispatchStatus ___setCallBack(IServer __obj, IceInternal.Incoming __inS, Ice.Current __current) {
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
         Ice.Identity id = null;
@@ -94,8 +92,7 @@ public abstract class _IServerDisp extends Ice.ObjectImpl implements IServer
         return Ice.DispatchStatus.DispatchOK;
     }
 
-    public static Ice.DispatchStatus ___request(IServer __obj, IceInternal.Incoming __inS, Ice.Current __current)
-    {
+    public static Ice.DispatchStatus ___request(IServer __obj, IceInternal.Incoming __inS, Ice.Current __current) {
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
         String msg;
@@ -109,47 +106,38 @@ public abstract class _IServerDisp extends Ice.ObjectImpl implements IServer
     }
 
     private final static String[] __all =
-    {
-        "ice_id",
-        "ice_ids",
-        "ice_isA",
-            "ice_ping",
-            "request",
-            "setCallBack"
-    };
+            {
+                    "ice_id",
+                    "ice_ids",
+                    "ice_isA",
+                    "ice_ping",
+                    "request",
+                    "setCallBack"
+            };
 
-    public Ice.DispatchStatus __dispatch(IceInternal.Incoming in, Ice.Current __current)
-    {
+    public Ice.DispatchStatus __dispatch(IceInternal.Incoming in, Ice.Current __current) {
         int pos = java.util.Arrays.binarySearch(__all, __current.operation);
-        if(pos < 0)
-        {
+        if(pos < 0) {
             throw new Ice.OperationNotExistException(__current.id, __current.facet, __current.operation);
         }
 
-        switch(pos)
-        {
-            case 0:
-            {
+        switch(pos) {
+            case 0: {
                 return ___ice_id(this, in, __current);
             }
-            case 1:
-            {
+            case 1: {
                 return ___ice_ids(this, in, __current);
             }
-            case 2:
-            {
+            case 2: {
                 return ___ice_isA(this, in, __current);
             }
-            case 3:
-            {
+            case 3: {
                 return ___ice_ping(this, in, __current);
             }
-            case 4:
-            {
+            case 4: {
                 return ___request(this, in, __current);
             }
-            case 5:
-            {
+            case 5: {
                 return ___setCallBack(this, in, __current);
             }
         }
@@ -158,14 +146,12 @@ public abstract class _IServerDisp extends Ice.ObjectImpl implements IServer
         throw new Ice.OperationNotExistException(__current.id, __current.facet, __current.operation);
     }
 
-    protected void __writeImpl(IceInternal.BasicStream __os)
-    {
+    protected void __writeImpl(IceInternal.BasicStream __os) {
         __os.startWriteSlice(ice_staticId(), -1, true);
         __os.endWriteSlice();
     }
 
-    protected void __readImpl(IceInternal.BasicStream __is)
-    {
+    protected void __readImpl(IceInternal.BasicStream __is) {
         __is.startReadSlice();
         __is.endReadSlice();
     }

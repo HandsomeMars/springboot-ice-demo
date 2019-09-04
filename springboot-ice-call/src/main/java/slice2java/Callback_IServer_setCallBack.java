@@ -20,11 +20,14 @@
 
 package slice2java;
 
+/**
+ * 服务端设置客户端回调对象
+ **/
+
 public abstract class Callback_IServer_setCallBack
-    extends IceInternal.TwowayCallback implements Ice.TwowayCallbackBool
+        extends IceInternal.TwowayCallback implements Ice.TwowayCallbackBool
 {
-    public final void __completed(Ice.AsyncResult __result)
-    {
+    public final void __completed(Ice.AsyncResult __result) {
         IServerPrxHelper.__setCallBack_completed(this, __result);
     }
 }

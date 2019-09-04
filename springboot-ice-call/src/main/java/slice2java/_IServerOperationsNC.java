@@ -20,9 +20,18 @@
 
 package slice2java;
 
+/**
+ * ice服务端
+ **/
 public interface _IServerOperationsNC
 {
+    /**
+     * 服务端设置客户端回调对象
+     **/
     boolean setCallBack(Ice.Identity id);
 
+    /**
+     * 服务端处理客户端请求
+     **/
     boolean request(String msg);
 }

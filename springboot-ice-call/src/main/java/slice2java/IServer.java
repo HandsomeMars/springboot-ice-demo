@@ -20,6 +20,9 @@
 
 package slice2java;
 
+/**
+ * ice服务端
+ **/
 public interface IServer extends Ice.Object,
         _IServerOperations, _IServerOperationsNC
 {

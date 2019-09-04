@@ -20,9 +20,21 @@
 
 package slice2java;
 
+/**
+ * ice服务端
+ **/
 public interface _IServerOperations
 {
+    /**
+     * 服务端设置客户端回调对象
+     *
+     * @param __current The Current object for the invocation.
+     **/
     boolean setCallBack(Ice.Identity id, Ice.Current __current);
 
+    /**
+     * 服务端处理客户端请求
+     * @param __current The Current object for the invocation.
+     **/
     boolean request(String msg, Ice.Current __current);
 }
